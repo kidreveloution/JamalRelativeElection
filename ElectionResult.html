@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Election Result Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #title {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            z-index: 1000;
+            border-bottom: 1px solid #ccc;
+        }
+        #map {
+            width: 100%;
+            height: calc(100vh - 100px);
+            margin-top: 60px;
+        }
+        #legend, #controls {
+            position: absolute;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        #legend {
+            bottom: 20px;
+            left: 20px;
+            line-height: 1.5;
+        }
+        #controls {
+            top: 70px;
+            left: 20px;
+        }
+        .legend-item, .control-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .color-box {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="title">Election Result Map</div>
+    <div id="map"></div>
+
+    <!-- Controls for selecting vote type -->
+    <div id="controls">
+        <label><input type="radio" name="voteType" value="absentee" checked> Absentee</label><br>
+        <label><input type="radio" name="voteType" value="early"> Early Voting</label><br>
+        <label><input type="radio" name="voteType" value="election"> Election Day</label><br>
+        <label><input type="radio" name="voteType" value="all"> All Votes</label><br>
+    </div>
+
+    <!-- Legend -->
+    <div id="legend">
+        <div class="legend-item">
+            <span class="color-box" style="background-color: rgba(0, 128, 0, 0.7);"></span> Jamal Aljahmi (Strong Win)
+        </div>
+        <div class="legend-item">
+            <span class="color-box" style="background-color: rgba(0, 128, 0, 0.5);"></span> Jamal Aljahmi (Moderate Win)
+        </div>
+        <div class="legend-item">
+            <span class="color-box" style="background-color: rgba(0, 128, 0, 0.3);"></span> Jamal Aljahmi (Narrow Win)
+        </div>
+        <div class="legend-item">
+            <span class="color-box" style="background-color: rgba(0, 0, 255, 0.7);"></span> Amer Zahr (Strong Win)
+        </div>
+        <div class="legend-item">
+            <span class="color-box" style="background-color: rgba(0, 0, 255, 0.5);"></span> Amer Zahr (Moderate Win)
+        </div>
+        <div class="legend-item">
+            <span class="color-box" style="background-color: rgba(0, 0, 255, 0.3);"></span> Amer Zahr (Narrow Win)
+        </div>
+        <div class="legend-item">
+            <span class="color-box" style="background-color: rgba(255, 255, 0, 0.7);"></span> Robin Makled (Strong Win)
+        </div>
+        <div class="legend-item">
+            <span class="color-box" style="background-color: rgba(255, 255, 0, 0.5);"></span> Robin Makled (Moderate Win)
+        </div>
+        <div class="legend-item">
+            <span class="color-box" style="background-color: rgba(255, 255, 0, 0.3);"></span> Robin Makled (Narrow Win)
+        </div>
+    </div>
+
+    <script>
+        const map = L.map('map').setView([42.3223, -83.1763], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        const precinctDataFiles = {
+            absentee: 'VotingJson/absentee_data.json',
+            early: 'VotingJson/early_voting_data.json',
+            election: 'VotingJson/election_day_data.json',
+            all: 'VotingJson/total_votes_data.json'
+        };
+
+        let geoLayer;
+        let precinctData = {};
+
+        // Function to update precincts based on selected vote type
+        function updatePrecincts() {
+            if (geoLayer) geoLayer.clearLayers();
+
+            fetch('MapData/Modified_Dearborn_Precincts.geojson')
+                .then(response => response.json())
+                .then(geoData => {
+                    geoData.features.forEach(feature => {
+                        const precinctID = feature.properties.Precinct_Long_Name?.trim();
+                        const precinctResults = precinctData[precinctID];
+
+                        if (precinctResults) {
+                            feature.properties = {
+                                ...feature.properties,
+                                Jamal_Aljahmi_Votes: precinctResults.Jamal_Aljahmi_Votes,
+                                Amer_Zahr_Votes: precinctResults.Amer_Zahr_Votes,
+                                Robin_Makled_Votes: precinctResults.Robin_Makled_Votes
+                            };
+                        }
+                    });
+
+                    function getColor(properties) {
+                        const jamalVotes = properties.Jamal_Aljahmi_Votes || 0;
+                        const amerVotes = properties.Amer_Zahr_Votes || 0;
+                        const robinVotes = properties.Robin_Makled_Votes || 0;
+
+                        const maxVotes = Math.max(jamalVotes, amerVotes, robinVotes);
+                        const margin = maxVotes - Math.min(jamalVotes, amerVotes, robinVotes);
+                        const intensity = margin > 200 ? 0.7 : margin > 100 ? 0.5 : 0.3;
+
+                        if (maxVotes === jamalVotes) return `rgba(0, 128, 0, ${intensity})`; // Green for Jamal
+                        if (maxVotes === amerVotes) return `rgba(0, 0, 255, ${intensity})`; // Blue for Amer
+                        return `rgba(255, 255, 0, ${intensity})`; // Yellow for Robin
+                    }
+
+                    geoLayer = L.geoJson(geoData, {
+                        style: feature => ({
+                            fillColor: getColor(feature.properties),
+                            weight: 1,
+                            color: '#333',
+                            fillOpacity: 0.7
+                        }),
+                        onEachFeature: (feature, layer) => {
+                            layer.on('click', () => {
+                                const properties = feature.properties;
+                                const popupContent = `
+                                    <b>Precinct:</b> ${properties.Precinct_Long_Name}<br>
+                                    <b>Jamal Aljahmi Votes:</b> ${properties.Jamal_Aljahmi_Votes || 'N/A'}<br>
+                                    <b>Amer Zahr Votes:</b> ${properties.Amer_Zahr_Votes || 'N/A'}<br>
+                                    <b>Robin Makled Votes:</b> ${properties.Robin_Makled_Votes || 'N/A'}
+                                `;
+                                layer.bindPopup(popupContent).openPopup();
+                            });
+                        }
+                    }).addTo(map);
+                });
+        }
+
+        // Function to load precinct data based on the selected vote type
+        function loadPrecinctData(voteType) {
+            const file = precinctDataFiles[voteType];
+            fetch(file)
+                .then(response => response.json())
+                .then(data => {
+                    precinctData = data;
+                    updatePrecincts();
+                });
+        }
+
+        // Event listener for vote type selection
+        document.querySelectorAll('input[name="voteType"]').forEach(radio => {
+            radio.addEventListener('change', event => {
+                loadPrecinctData(event.target.value);
+            });
+        });
+
+        // Initial load with "Absentee" data
+        loadPrecinctData('absentee');
+    </script>
+</body>
+</html>
