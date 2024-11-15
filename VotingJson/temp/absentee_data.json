@@ -1,0 +1,434 @@
+{
+    "City of Dearborn, Precinct 1": {
+        "Jamal_Aljahmi_Votes": 46,
+        "Jamal_Aljahmi_Percent": "33.09%",
+        "Amer_Zahr_Votes": 20,
+        "Amer_Zahr_Percent": "14.39%",
+        "Robin_Makled_Votes": 15,
+        "Robin_Makled_Percent": "10.79%",
+        "Total_Votes": 139
+    },
+    "City of Dearborn, Precinct 2": {
+        "Jamal_Aljahmi_Votes": 38,
+        "Jamal_Aljahmi_Percent": "25.50%",
+        "Amer_Zahr_Votes": 21,
+        "Amer_Zahr_Percent": "14.09%",
+        "Robin_Makled_Votes": 16,
+        "Robin_Makled_Percent": "10.74%",
+        "Total_Votes": 149
+    },
+    "City of Dearborn, Precinct 3": {
+        "Jamal_Aljahmi_Votes": 61,
+        "Jamal_Aljahmi_Percent": "25.42%",
+        "Amer_Zahr_Votes": 33,
+        "Amer_Zahr_Percent": "13.75%",
+        "Robin_Makled_Votes": 20,
+        "Robin_Makled_Percent": "8.33%",
+        "Total_Votes": 240
+    },
+    "City of Dearborn, Precinct 4": {
+        "Jamal_Aljahmi_Votes": 23,
+        "Jamal_Aljahmi_Percent": "20.54%",
+        "Amer_Zahr_Votes": 19,
+        "Amer_Zahr_Percent": "16.96%",
+        "Robin_Makled_Votes": 21,
+        "Robin_Makled_Percent": "18.75%",
+        "Total_Votes": 112
+    },
+    "City of Dearborn, Precinct 5": {
+        "Jamal_Aljahmi_Votes": 24,
+        "Jamal_Aljahmi_Percent": "22.02%",
+        "Amer_Zahr_Votes": 23,
+        "Amer_Zahr_Percent": "21.10%",
+        "Robin_Makled_Votes": 7,
+        "Robin_Makled_Percent": "6.42%",
+        "Total_Votes": 109
+    },
+    "City of Dearborn, Precinct 6": {
+        "Jamal_Aljahmi_Votes": 44,
+        "Jamal_Aljahmi_Percent": "27.33%",
+        "Amer_Zahr_Votes": 24,
+        "Amer_Zahr_Percent": "14.91%",
+        "Robin_Makled_Votes": 13,
+        "Robin_Makled_Percent": "8.07%",
+        "Total_Votes": 161
+    },
+    "City of Dearborn, Precinct 7": {
+        "Jamal_Aljahmi_Votes": 52,
+        "Jamal_Aljahmi_Percent": "25.00%",
+        "Amer_Zahr_Votes": 49,
+        "Amer_Zahr_Percent": "23.56%",
+        "Robin_Makled_Votes": 21,
+        "Robin_Makled_Percent": "10.10%",
+        "Total_Votes": 208
+    },
+    "City of Dearborn, Precinct 8": {
+        "Jamal_Aljahmi_Votes": 50,
+        "Jamal_Aljahmi_Percent": "34.48%",
+        "Amer_Zahr_Votes": 26,
+        "Amer_Zahr_Percent": "17.93%",
+        "Robin_Makled_Votes": 4,
+        "Robin_Makled_Percent": "2.76%",
+        "Total_Votes": 145
+    },
+    "City of Dearborn, Precinct 9": {
+        "Jamal_Aljahmi_Votes": 28,
+        "Jamal_Aljahmi_Percent": "22.22%",
+        "Amer_Zahr_Votes": 19,
+        "Amer_Zahr_Percent": "15.08%",
+        "Robin_Makled_Votes": 13,
+        "Robin_Makled_Percent": "10.32%",
+        "Total_Votes": 126
+    },
+    "City of Dearborn, Precinct 10": {
+        "Jamal_Aljahmi_Votes": 35,
+        "Jamal_Aljahmi_Percent": "25.36%",
+        "Amer_Zahr_Votes": 12,
+        "Amer_Zahr_Percent": "8.70%",
+        "Robin_Makled_Votes": 22,
+        "Robin_Makled_Percent": "15.94%",
+        "Total_Votes": 138
+    },
+    "City of Dearborn, Precinct 11": {
+        "Jamal_Aljahmi_Votes": 22,
+        "Jamal_Aljahmi_Percent": "28.95%",
+        "Amer_Zahr_Votes": 11,
+        "Amer_Zahr_Percent": "14.47%",
+        "Robin_Makled_Votes": 3,
+        "Robin_Makled_Percent": "3.95%",
+        "Total_Votes": 76
+    },
+    "City of Dearborn, Precinct 12": {
+        "Jamal_Aljahmi_Votes": 45,
+        "Jamal_Aljahmi_Percent": "21.23%",
+        "Amer_Zahr_Votes": 28,
+        "Amer_Zahr_Percent": "13.21%",
+        "Robin_Makled_Votes": 28,
+        "Robin_Makled_Percent": "13.21%",
+        "Total_Votes": 212
+    },
+    "City of Dearborn, Precinct 13": {
+        "Jamal_Aljahmi_Votes": 17,
+        "Jamal_Aljahmi_Percent": "6.39%",
+        "Amer_Zahr_Votes": 21,
+        "Amer_Zahr_Percent": "7.89%",
+        "Robin_Makled_Votes": 65,
+        "Robin_Makled_Percent": "24.44%",
+        "Total_Votes": 266
+    },
+    "City of Dearborn, Precinct 15": {
+        "Jamal_Aljahmi_Votes": 71,
+        "Jamal_Aljahmi_Percent": "32.72%",
+        "Amer_Zahr_Votes": 17,
+        "Amer_Zahr_Percent": "7.83%",
+        "Robin_Makled_Votes": 30,
+        "Robin_Makled_Percent": "13.82%",
+        "Total_Votes": 217
+    },
+    "City of Dearborn, Precinct 16": {
+        "Jamal_Aljahmi_Votes": 60,
+        "Jamal_Aljahmi_Percent": "22.64%",
+        "Amer_Zahr_Votes": 23,
+        "Amer_Zahr_Percent": "8.68%",
+        "Robin_Makled_Votes": 33,
+        "Robin_Makled_Percent": "12.45%",
+        "Total_Votes": 265
+    },
+    "City of Dearborn, Precinct 17": {
+        "Jamal_Aljahmi_Votes": 59,
+        "Jamal_Aljahmi_Percent": "21.45%",
+        "Amer_Zahr_Votes": 29,
+        "Amer_Zahr_Percent": "10.55%",
+        "Robin_Makled_Votes": 34,
+        "Robin_Makled_Percent": "12.36%",
+        "Total_Votes": 275
+    },
+    "City of Dearborn, Precinct 18": {
+        "Jamal_Aljahmi_Votes": 94,
+        "Jamal_Aljahmi_Percent": "28.66%",
+        "Amer_Zahr_Votes": 19,
+        "Amer_Zahr_Percent": "5.79%",
+        "Robin_Makled_Votes": 32,
+        "Robin_Makled_Percent": "9.76%",
+        "Total_Votes": 328
+    },
+    "City of Dearborn, Precinct 19": {
+        "Jamal_Aljahmi_Votes": 58,
+        "Jamal_Aljahmi_Percent": "32.40%",
+        "Amer_Zahr_Votes": 27,
+        "Amer_Zahr_Percent": "15.08%",
+        "Robin_Makled_Votes": 19,
+        "Robin_Makled_Percent": "10.61%",
+        "Total_Votes": 179
+    },
+    "City of Dearborn, Precinct 20": {
+        "Jamal_Aljahmi_Votes": 46,
+        "Jamal_Aljahmi_Percent": "52.27%",
+        "Amer_Zahr_Votes": 16,
+        "Amer_Zahr_Percent": "18.18%",
+        "Robin_Makled_Votes": 4,
+        "Robin_Makled_Percent": "4.55%",
+        "Total_Votes": 88
+    },
+    "City of Dearborn, Precinct 21": {
+        "Jamal_Aljahmi_Votes": 43,
+        "Jamal_Aljahmi_Percent": "61.43%",
+        "Amer_Zahr_Votes": 9,
+        "Amer_Zahr_Percent": "12.86%",
+        "Robin_Makled_Votes": 3,
+        "Robin_Makled_Percent": "4.29%",
+        "Total_Votes": 70
+    },
+    "City of Dearborn, Precinct 22": {
+        "Jamal_Aljahmi_Votes": 44,
+        "Jamal_Aljahmi_Percent": "12.75%",
+        "Amer_Zahr_Votes": 19,
+        "Amer_Zahr_Percent": "5.51%",
+        "Robin_Makled_Votes": 62,
+        "Robin_Makled_Percent": "17.97%",
+        "Total_Votes": 345
+    },
+    "City of Dearborn, Precinct 23": {
+        "Jamal_Aljahmi_Votes": 37,
+        "Jamal_Aljahmi_Percent": "11.75%",
+        "Amer_Zahr_Votes": 41,
+        "Amer_Zahr_Percent": "13.02%",
+        "Robin_Makled_Votes": 67,
+        "Robin_Makled_Percent": "21.27%",
+        "Total_Votes": 315
+    },
+    "City of Dearborn, Precinct 24": {
+        "Jamal_Aljahmi_Votes": 11,
+        "Jamal_Aljahmi_Percent": "2.76%",
+        "Amer_Zahr_Votes": 17,
+        "Amer_Zahr_Percent": "4.27%",
+        "Robin_Makled_Votes": 125,
+        "Robin_Makled_Percent": "31.41%",
+        "Total_Votes": 398
+    },
+    "City of Dearborn, Precinct 25": {
+        "Jamal_Aljahmi_Votes": 29,
+        "Jamal_Aljahmi_Percent": "4.54%",
+        "Amer_Zahr_Votes": 25,
+        "Amer_Zahr_Percent": "3.91%",
+        "Robin_Makled_Votes": 181,
+        "Robin_Makled_Percent": "28.33%",
+        "Total_Votes": 639
+    },
+    "City of Dearborn, Precinct 26": {
+        "Jamal_Aljahmi_Votes": 45,
+        "Jamal_Aljahmi_Percent": "8.27%",
+        "Amer_Zahr_Votes": 28,
+        "Amer_Zahr_Percent": "5.15%",
+        "Robin_Makled_Votes": 105,
+        "Robin_Makled_Percent": "19.30%",
+        "Total_Votes": 544
+    },
+    "City of Dearborn, Precinct 27": {
+        "Jamal_Aljahmi_Votes": 23,
+        "Jamal_Aljahmi_Percent": "4.24%",
+        "Amer_Zahr_Votes": 34,
+        "Amer_Zahr_Percent": "6.27%",
+        "Robin_Makled_Votes": 125,
+        "Robin_Makled_Percent": "23.06%",
+        "Total_Votes": 542
+    },
+    "City of Dearborn, Precinct 28": {
+        "Jamal_Aljahmi_Votes": 18,
+        "Jamal_Aljahmi_Percent": "6.38%",
+        "Amer_Zahr_Votes": 24,
+        "Amer_Zahr_Percent": "8.51%",
+        "Robin_Makled_Votes": 60,
+        "Robin_Makled_Percent": "21.28%",
+        "Total_Votes": 282
+    },
+    "City of Dearborn, Precinct 29": {
+        "Jamal_Aljahmi_Votes": 19,
+        "Jamal_Aljahmi_Percent": "6.96%",
+        "Amer_Zahr_Votes": 18,
+        "Amer_Zahr_Percent": "6.59%",
+        "Robin_Makled_Votes": 50,
+        "Robin_Makled_Percent": "18.32%",
+        "Total_Votes": 273
+    },
+    "City of Dearborn, Precinct 30": {
+        "Jamal_Aljahmi_Votes": 20,
+        "Jamal_Aljahmi_Percent": "8.26%",
+        "Amer_Zahr_Votes": 12,
+        "Amer_Zahr_Percent": "4.96%",
+        "Robin_Makled_Votes": 29,
+        "Robin_Makled_Percent": "11.98%",
+        "Total_Votes": 242
+    },
+    "City of Dearborn, Precinct 31": {
+        "Jamal_Aljahmi_Votes": 61,
+        "Jamal_Aljahmi_Percent": "9.98%",
+        "Amer_Zahr_Votes": 63,
+        "Amer_Zahr_Percent": "10.31%",
+        "Robin_Makled_Votes": 114,
+        "Robin_Makled_Percent": "18.66%",
+        "Total_Votes": 611
+    },
+    "City of Dearborn, Precinct 32": {
+        "Jamal_Aljahmi_Votes": 45,
+        "Jamal_Aljahmi_Percent": "10.92%",
+        "Amer_Zahr_Votes": 40,
+        "Amer_Zahr_Percent": "9.71%",
+        "Robin_Makled_Votes": 83,
+        "Robin_Makled_Percent": "20.15%",
+        "Total_Votes": 412
+    },
+    "City of Dearborn, Precinct 33": {
+        "Jamal_Aljahmi_Votes": 11,
+        "Jamal_Aljahmi_Percent": "2.86%",
+        "Amer_Zahr_Votes": 34,
+        "Amer_Zahr_Percent": "8.83%",
+        "Robin_Makled_Votes": 67,
+        "Robin_Makled_Percent": "17.40%",
+        "Total_Votes": 385
+    },
+    "City of Dearborn, Precinct 34": {
+        "Jamal_Aljahmi_Votes": 32,
+        "Jamal_Aljahmi_Percent": "6.60%",
+        "Amer_Zahr_Votes": 27,
+        "Amer_Zahr_Percent": "5.57%",
+        "Robin_Makled_Votes": 75,
+        "Robin_Makled_Percent": "15.46%",
+        "Total_Votes": 485
+    },
+    "City of Dearborn, Precinct 35": {
+        "Jamal_Aljahmi_Votes": 13,
+        "Jamal_Aljahmi_Percent": "3.10%",
+        "Amer_Zahr_Votes": 13,
+        "Amer_Zahr_Percent": "3.10%",
+        "Robin_Makled_Votes": 115,
+        "Robin_Makled_Percent": "27.38%",
+        "Total_Votes": 420
+    },
+    "City of Dearborn, Precinct 36": {
+        "Jamal_Aljahmi_Votes": 12,
+        "Jamal_Aljahmi_Percent": "3.61%",
+        "Amer_Zahr_Votes": 9,
+        "Amer_Zahr_Percent": "2.71%",
+        "Robin_Makled_Votes": 54,
+        "Robin_Makled_Percent": "16.27%",
+        "Total_Votes": 332
+    },
+    "City of Dearborn, Precinct 37": {
+        "Jamal_Aljahmi_Votes": 27,
+        "Jamal_Aljahmi_Percent": "5.30%",
+        "Amer_Zahr_Votes": 37,
+        "Amer_Zahr_Percent": "7.27%",
+        "Robin_Makled_Votes": 91,
+        "Robin_Makled_Percent": "17.88%",
+        "Total_Votes": 509
+    },
+    "City of Dearborn, Precinct 38": {
+        "Jamal_Aljahmi_Votes": 18,
+        "Jamal_Aljahmi_Percent": "3.68%",
+        "Amer_Zahr_Votes": 25,
+        "Amer_Zahr_Percent": "5.11%",
+        "Robin_Makled_Votes": 81,
+        "Robin_Makled_Percent": "16.56%",
+        "Total_Votes": 489
+    },
+    "City of Dearborn, Precinct 40": {
+        "Jamal_Aljahmi_Votes": 31,
+        "Jamal_Aljahmi_Percent": "9.60%",
+        "Amer_Zahr_Votes": 33,
+        "Amer_Zahr_Percent": "10.22%",
+        "Robin_Makled_Votes": 55,
+        "Robin_Makled_Percent": "17.03%",
+        "Total_Votes": 323
+    },
+    "City of Dearborn, Precinct 41": {
+        "Jamal_Aljahmi_Votes": 25,
+        "Jamal_Aljahmi_Percent": "4.52%",
+        "Amer_Zahr_Votes": 36,
+        "Amer_Zahr_Percent": "6.51%",
+        "Robin_Makled_Votes": 101,
+        "Robin_Makled_Percent": "18.26%",
+        "Total_Votes": 553
+    },
+    "City of Dearborn, Precinct 42": {
+        "Jamal_Aljahmi_Votes": 24,
+        "Jamal_Aljahmi_Percent": "5.07%",
+        "Amer_Zahr_Votes": 28,
+        "Amer_Zahr_Percent": "5.92%",
+        "Robin_Makled_Votes": 75,
+        "Robin_Makled_Percent": "15.86%",
+        "Total_Votes": 473
+    },
+    "City of Dearborn, Precinct 43": {
+        "Jamal_Aljahmi_Votes": 26,
+        "Jamal_Aljahmi_Percent": "6.10%",
+        "Amer_Zahr_Votes": 24,
+        "Amer_Zahr_Percent": "5.63%",
+        "Robin_Makled_Votes": 114,
+        "Robin_Makled_Percent": "26.76%",
+        "Total_Votes": 426
+    },
+    "City of Dearborn, Precinct 44": {
+        "Jamal_Aljahmi_Votes": 20,
+        "Jamal_Aljahmi_Percent": "3.92%",
+        "Amer_Zahr_Votes": 27,
+        "Amer_Zahr_Percent": "5.29%",
+        "Robin_Makled_Votes": 162,
+        "Robin_Makled_Percent": "31.76%",
+        "Total_Votes": 510
+    },
+    "City of Dearborn, Precinct 45": {
+        "Jamal_Aljahmi_Votes": 21,
+        "Jamal_Aljahmi_Percent": "3.58%",
+        "Amer_Zahr_Votes": 32,
+        "Amer_Zahr_Percent": "5.46%",
+        "Robin_Makled_Votes": 140,
+        "Robin_Makled_Percent": "23.89%",
+        "Total_Votes": 586
+    },
+    "City of Dearborn, Precinct 46": {
+        "Jamal_Aljahmi_Votes": 25,
+        "Jamal_Aljahmi_Percent": "4.40%",
+        "Amer_Zahr_Votes": 20,
+        "Amer_Zahr_Percent": "3.52%",
+        "Robin_Makled_Votes": 151,
+        "Robin_Makled_Percent": "26.58%",
+        "Total_Votes": 568
+    },
+    "City of Dearborn, Precinct 47": {
+        "Jamal_Aljahmi_Votes": 10,
+        "Jamal_Aljahmi_Percent": "2.81%",
+        "Amer_Zahr_Votes": 9,
+        "Amer_Zahr_Percent": "2.53%",
+        "Robin_Makled_Votes": 77,
+        "Robin_Makled_Percent": "21.63%",
+        "Total_Votes": 356
+    },
+    "City of Dearborn, Precinct 48": {
+        "Jamal_Aljahmi_Votes": 14,
+        "Jamal_Aljahmi_Percent": "3.87%",
+        "Amer_Zahr_Votes": 13,
+        "Amer_Zahr_Percent": "3.59%",
+        "Robin_Makled_Votes": 69,
+        "Robin_Makled_Percent": "19.06%",
+        "Total_Votes": 362
+    },
+    "City of Dearborn, Precinct 49": {
+        "Jamal_Aljahmi_Votes": 37,
+        "Jamal_Aljahmi_Percent": "6.16%",
+        "Amer_Zahr_Votes": 15,
+        "Amer_Zahr_Percent": "2.50%",
+        "Robin_Makled_Votes": 110,
+        "Robin_Makled_Percent": "18.30%",
+        "Total_Votes": 601
+    },
+    "City of Dearborn, Precinct 50": {
+        "Jamal_Aljahmi_Votes": 24,
+        "Jamal_Aljahmi_Percent": "5.13%",
+        "Amer_Zahr_Votes": 20,
+        "Amer_Zahr_Percent": "4.27%",
+        "Robin_Makled_Votes": 110,
+        "Robin_Makled_Percent": "23.50%",
+        "Total_Votes": 468
+    }
+}

@@ -82,57 +82,66 @@
 
     <script>
         const map = L.map('map').setView([42.3223, -83.1763], 13); // Adjust for Dearborn, MI, with zoom level 13
-
+    
         // Add a base layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
-
+    
         // Define precinctData files for each voting type
         const precinctDataFiles = {
-            absentee: 'VotingJson/absentee_data.json',
-            early: 'VotingJson/early_voting_data.json',
-            election: 'VotingJson/election_day_data.json',
-            all: 'VotingJson/total_votes_data.json'
+            absentee: 'VotingJson/temp/absentee_data.json',
+            early: 'VotingJson/temp/early_voting_data.json',
+            election: 'VotingJson/temp/election_day_data.json',
+            all: 'VotingJson/temp/total_votes_data.json'
         };
-
+    
         let geoLayer; // Variable to store the GeoJSON layer
         let precinctData = {}; // Variable to store the precinctData for the current vote type
         let selectedCandidate = 'Jamal_Aljahmi'; // Default candidate
         let comparisonMode = 'relative'; // Default comparison mode
-
+    
         // Function to find the maximum votes for Total Mode
         function getMaxVotes(candidateKey) {
             return Math.max(...Object.values(precinctData).map(precinct => precinct[`${candidateKey}_Votes`] || 0));
         }
-
+    
         // Function to update precinct properties with the current precinctData
         function updatePrecincts() {
             if (geoLayer) {
                 geoLayer.clearLayers();
             }
-
+    
             fetch('MapData/Modified_Dearborn_Precincts.geojson')
                 .then(response => response.json())
                 .then(geoData => {
                     geoData.features.forEach(feature => {
                         const precinctID = feature.properties.Precinct_Long_Name?.trim();
                         const precinctResults = precinctData[precinctID];
-
+    
                         if (precinctResults) {
-                            feature.properties = { 
-                                ...feature.properties, 
+                            const totalVotes = precinctResults.Total_Votes || 0;
+                            const jamalPercent = totalVotes > 0 ? (precinctResults.Jamal_Aljahmi_Votes / totalVotes * 100).toFixed(2) : 0;
+                            const amerPercent = totalVotes > 0 ? (precinctResults.Amer_Zahr_Votes / totalVotes * 100).toFixed(2) : 0;
+                            const robinPercent = totalVotes > 0 ? (precinctResults.Robin_Makled_Votes / totalVotes * 100).toFixed(2) : 0;
+    
+                            feature.properties = {
+                                ...feature.properties,
                                 Jamal_Aljahmi_Votes: precinctResults.Jamal_Aljahmi_Votes,
                                 Amer_Zahr_Votes: precinctResults.Amer_Zahr_Votes,
-                                Robin_Makled_Votes: precinctResults.Robin_Makled_Votes
+                                Robin_Makled_Votes: precinctResults.Robin_Makled_Votes,
+                                Total_Votes: totalVotes,
+                                Jamal_Aljahmi_Percent: jamalPercent,
+                                Amer_Zahr_Percent: amerPercent,
+                                Robin_Makled_Percent: robinPercent
                             };
                         }
                     });
-
+    
                     // Function to determine color based on the selected mode
                     function getColor(properties) {
                         const candidateVotes = properties[`${selectedCandidate}_Votes`] || 0;
-
+    
                         if (comparisonMode === 'relative') {
                             // Relative mode: compare to the highest competitor
                             const otherVotes = [
@@ -142,7 +151,7 @@
                             ].filter(votes => votes !== candidateVotes); // Exclude selected candidate's votes
                             
                             const maxOtherVotes = Math.max(...otherVotes);
-
+    
                             if (candidateVotes > maxOtherVotes) {
                                 const margin = candidateVotes - maxOtherVotes;
                                 return margin > 200 ? '#00441b' : margin > 100 ? '#1a9850' : '#91cf60';
@@ -154,14 +163,14 @@
                             // Total mode: compare to the maximum votes across all precincts for this candidate
                             const maxVotes = getMaxVotes(selectedCandidate);
                             const voteRatio = candidateVotes / maxVotes;
-
+    
                             return voteRatio > 0.75 ? '#00441b' : // Dark green for highest votes
                                    voteRatio > 0.5 ? '#1a9850' : // Medium green for high votes
                                    voteRatio > 0.25 ? '#91cf60' : // Light green for moderate votes
                                    '#d73027'; // Red for lower votes
                         }
                     }
-
+    
                     // Add the GeoJSON data to the map with updated properties
                     geoLayer = L.geoJson(geoData, {
                         style: feature => ({
@@ -175,9 +184,10 @@
                                 const properties = feature.properties;
                                 const popupContent = `
                                     <b>Precinct:</b> ${properties.Precinct_Long_Name}<br>
-                                    <b>Jamal Aljahmi Votes:</b> ${properties.Jamal_Aljahmi_Votes || 'N/A'}<br>
-                                    <b>Amer Zahr Votes:</b> ${properties.Amer_Zahr_Votes || 'N/A'}<br>
-                                    <b>Robin Makled Votes:</b> ${properties.Robin_Makled_Votes || 'N/A'}
+                                    <b>Jamal Aljahmi Votes:</b> ${properties.Jamal_Aljahmi_Votes || 'N/A'} (${properties.Jamal_Aljahmi_Percent || '0'}%)<br>
+                                    <b>Amer Zahr Votes:</b> ${properties.Amer_Zahr_Votes || 'N/A'} (${properties.Amer_Zahr_Percent || '0'}%)<br>
+                                    <b>Robin Makled Votes:</b> ${properties.Robin_Makled_Votes || 'N/A'} (${properties.Robin_Makled_Percent || '0'}%)<br>
+                                    <b>Total Votes:</b> ${properties.Total_Votes || 'N/A'}
                                 `;
                                 layer.bindPopup(popupContent).openPopup();
                             });
@@ -185,7 +195,7 @@
                     }).addTo(map);
                 });
         }
-
+    
         // Function to load precinctData based on the selected vote type
         function loadPrecinctData(voteType) {
             fetch(precinctDataFiles[voteType])
@@ -195,14 +205,14 @@
                     updatePrecincts(); // Update the map with the new precinctData
                 });
         }
-
+    
         // Event listener for vote type selection
         document.querySelectorAll('input[name="voteType"]').forEach(radio => {
             radio.addEventListener('change', event => {
                 loadPrecinctData(event.target.value);
             });
         });
-
+    
         // Event listener for candidate selection
         document.querySelectorAll('input[name="candidate"]').forEach(radio => {
             radio.addEventListener('change', event => {
@@ -210,7 +220,7 @@
                 updatePrecincts(); // Update the map with the new candidate selection
             });
         });
-
+    
         // Event listener for comparison mode selection
         document.querySelectorAll('input[name="comparisonMode"]').forEach(radio => {
             radio.addEventListener('change', event => {
@@ -218,9 +228,10 @@
                 updatePrecincts(); // Update the map with the new comparison mode
             });
         });
-
+    
         // Initial load with "Absentee" data, default candidate, and relative mode
         loadPrecinctData('absentee');
     </script>
+    
 </body>
 </html>
